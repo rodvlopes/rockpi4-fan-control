@@ -1,0 +1,9 @@
+[Unit]
+Description=Fan control based on cpu temperature
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/fanctl
+
+[Install]
+WantedBy=multi-user.target
