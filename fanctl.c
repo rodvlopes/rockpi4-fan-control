@@ -28,8 +28,8 @@
 #define PINDIRECTION_FILE "/sys/class/gpio/gpio" PINNUM "/direction"
 #define EXPORT_FILE "/sys/class/gpio/export"
 #define TEMPERATURE_FILE "/sys/class/thermal/thermal_zone0/temp"
-#define TEMPERATURE_THRESHOLD_ON  59000
-#define TEMPERATURE_THRESHOLD_OFF 40000
+#define TEMPERATURE_THRESHOLD_ON  70000
+#define TEMPERATURE_THRESHOLD_OFF 43000
  
 int file_exist (char *fname) {
     return access( fname, F_OK ) != -1;
@@ -94,6 +94,7 @@ int main (int argc, char *argv[]) {
             debug && printf("off\n");
         }
         usleep(500000); //500ms
+        fflush(NULL);
     }
 
 	return(0);
